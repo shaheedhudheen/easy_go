@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:easy_go/screens/authenticate/sign_in.dart';
 import 'package:easy_go/screens/wrapper.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       
     home: Wrapper(),
-    
+
     );
   }
 }
