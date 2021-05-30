@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:easy_go/widgets/home/hometitle.dart';
 import 'package:easy_go/widgets/home/homeImage.dart';
 import 'package:easy_go/widgets/home/homeSearch.dart';
 
+
+
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return SingleChildScrollView(
       child: Container(
         height: MediaQuery.of(context).size.height,
@@ -22,3 +26,5 @@ class Home extends StatelessWidget {
     );
   }
 }
+
+   
