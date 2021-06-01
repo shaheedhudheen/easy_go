@@ -44,7 +44,7 @@ class _RegisterState extends State<Register> {
                   SizedBox(height: 40,),
                   Text('Create a Account',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25, fontFamily: 'Brand-Bold'),
+                    style: TextStyle(fontSize: 25, fontFamily: 'Bold'),
                   ),
 
                   Padding(
@@ -64,7 +64,7 @@ class _RegisterState extends State<Register> {
                               fontSize: 10,
                             ),
                           ),
-                          style: TextStyle(fontSize: 14),
+                          style: TextStyle(fontSize: 14, fontFamily: 'semi bold'),
                           validator: (val) => val.isEmpty ? 'Enter full name' : null,
                           onChanged: (val){
                             setState(() => fullName = val );
@@ -85,7 +85,7 @@ class _RegisterState extends State<Register> {
                               fontSize: 10,
                             ),
                           ),
-                          style: TextStyle(fontSize: 14),
+                          style: TextStyle(fontSize: 14, fontFamily: 'semi bold'),
                           validator: (val) => val.isEmpty ? 'Enter an Email' : null,
                           onChanged: (val){
                             setState(() => email = val);
@@ -107,7 +107,7 @@ class _RegisterState extends State<Register> {
                               fontSize: 10,
                             ),
                           ),
-                          style: TextStyle(fontSize: 14),
+                          style: TextStyle(fontSize: 14, fontFamily: 'semi bold'),
                           validator: (val) => val.length < 10 ? 'Enter a valid phone number' : null,
                           onChanged: (val){
                             setState(() => phone = val );
@@ -129,7 +129,7 @@ class _RegisterState extends State<Register> {
                               fontSize: 10,
                             ),
                           ),
-                          style: TextStyle(fontSize: 14),
+                          style: TextStyle(fontSize: 14, fontFamily: 'semi bold'),
                           validator: (val) => val.length < 8 ? 'Password must be 8 letter or more' : null,
                           onChanged: (val){
                             setState(() => password = val);
@@ -177,7 +177,8 @@ class _RegisterState extends State<Register> {
                       child: Text(
                         'Already have an account? Log in',
                         style: TextStyle(
-                            color: Colors.black54
+                            color: Colors.black54,
+                            fontFamily: 'semi bold'
                         ),
 
                       )),

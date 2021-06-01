@@ -45,7 +45,7 @@ class _SignInState extends State<SignIn>{
                   Text(
                     'Sign In',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25, fontFamily: 'Bold'),
+                    style: TextStyle(fontSize: 25, fontFamily: 'Bold', color: Colors.black87),
                   ),
                   Padding(
                     padding: EdgeInsets.all(20.0),
@@ -65,7 +65,7 @@ class _SignInState extends State<SignIn>{
                               fontSize: 18,
                             ),
                           ),
-                          style: TextStyle(fontSize: 20, fontFamily: 'Bold'),
+                          style: TextStyle(fontSize: 20, fontFamily: 'semi bold'),
                           onChanged: (val){
                             setState(() => email = val);
                             },
@@ -88,7 +88,7 @@ class _SignInState extends State<SignIn>{
                               fontSize: 18,
                             ),
                           ),
-                          style: TextStyle(fontSize: 20, fontFamily: 'Bold',),
+                          style: TextStyle(fontSize: 20, fontFamily: 'semi bold',),
                           onChanged: (val){
                             setState(() => password = val);
                           },
@@ -125,7 +125,7 @@ class _SignInState extends State<SignIn>{
                   SizedBox(height: 12,),
                   Text(
                     error,
-                    style: TextStyle(color: Colors.red, fontSize: 14.0, fontFamily: 'Bold'),
+                    style: TextStyle(color: Colors.red, fontSize: 14.0, fontFamily: 'semi bold'),
                   ),
 
                   TextButton(
@@ -133,7 +133,7 @@ class _SignInState extends State<SignIn>{
                       "Don't have an account, sign up here",
                       style: TextStyle(
                           fontSize: 15,
-                          fontFamily: 'Bold',
+                          fontFamily: 'semi bold',
                           color: Colors.black87),
                     ),
                     onPressed: (){
