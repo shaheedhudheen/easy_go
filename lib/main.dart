@@ -1,20 +1,28 @@
-// Copyright 2018 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'package:easy_go/screens/authenticate/sign_in.dart';
 import 'package:easy_go/screens/wrapper.dart';
+import 'package:easy_go/services/auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'models/user.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
+
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      
-    home: Wrapper(),
-
+    return StreamProvider<Account>.value(
+      initialData: null,
+      value: AuthService().user, 
+      child: MaterialApp(
+      home: Wrapper(),
+      ),
     );
   }
 }
+
