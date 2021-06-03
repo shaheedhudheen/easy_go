@@ -14,8 +14,12 @@ class Menu extends StatelessWidget {
         child: Column(
           children: [
             divider,
-            Heading(),
+            Expanded(
+              flex: 1,
+              child: Heading(),
+            ),
             new Expanded(
+              flex: 9,
               child: GridMenu(),
             ),
           ],

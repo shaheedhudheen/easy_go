@@ -1,18 +1,18 @@
+import 'package:easy_go/screens/maps/mapScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_go/widgets/home/homeSearchText.dart';
 import 'package:easy_go/widgets/home/homeSearchBar.dart';
 import 'package:easy_go/widgets/home/homeSearchIcons.dart';
-import 'package:easy_go/screens/menu/menu.dart';
 
 class HomeSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        top: 10,
-        bottom: 30,
+        top: 5,
+        // bottom: 5,
       ),
-      height: 0.5 * MediaQuery.of(context).size.height,
+      height: 0.48 * MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         color: Color.fromRGBO(47, 46, 65, 1),
@@ -36,7 +36,7 @@ class HomeSearch extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Menu()),
+                    MaterialPageRoute(builder: (context) => MapScreen()),
                   );
                 },
                 onLongPress: () {
@@ -61,10 +61,9 @@ class HomeSearch extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  homeIcon(),
+                  searchIcon(),
                   accountIcon(),
-                  bubbleIcon(),
-                  addIcon(),
-                  saveIcon(),
                 ],
               ),
             ],

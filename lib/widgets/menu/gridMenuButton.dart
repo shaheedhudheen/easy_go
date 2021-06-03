@@ -45,7 +45,7 @@ class GridMenuButton extends StatelessWidget {
               buttonName,
               style: TextStyle(
                 fontFamily: 'Bold',
-                fontSize: 25,
+                fontSize: 23,
                 fontWeight: FontWeight.w900,
                 color: Colors.white,
               ),

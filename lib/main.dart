@@ -1,4 +1,4 @@
-import 'package:easy_go/screens/authenticate/sign_in.dart';
+import 'package:easy_go/screens/maps/applicationBloc.dart';
 import 'package:easy_go/screens/wrapper.dart';
 import 'package:easy_go/services/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -12,17 +12,18 @@ void main() async {
   runApp(MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamProvider<Account>.value(
       initialData: null,
-      value: AuthService().user, 
-      child: MaterialApp(
-      home: Wrapper(),
+      value: AuthService().user,
+      child: ChangeNotifierProvider(
+        create: (context) => ApplicationBloc(),
+        child: MaterialApp(
+          home: Wrapper(),
+        ),
       ),
     );
   }
 }
-
