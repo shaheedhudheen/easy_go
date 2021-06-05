@@ -26,7 +26,7 @@ class Home extends StatelessWidget {
               child: HomeImage(),
             ),
             Expanded(
-              flex: 5,
+              flex: 6,
               child: HomeSearch(),
             ),
           ],

@@ -1,8 +1,9 @@
-import 'package:easy_go/screens/maps/mapScreen.dart';
+import 'package:easy_go/screens/menu/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_go/widgets/home/homeSearchText.dart';
 import 'package:easy_go/widgets/home/homeSearchBar.dart';
 import 'package:easy_go/widgets/home/homeSearchIcons.dart';
+import 'package:flutter/services.dart';
 
 class HomeSearch extends StatelessWidget {
   @override
@@ -34,9 +35,10 @@ class HomeSearch extends StatelessWidget {
               RaisedButton(
                 elevation: 10,
                 onPressed: () {
+                  HapticFeedback.heavyImpact();
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MapScreen()),
+                    MaterialPageRoute(builder: (context) => Menu()),
                   );
                 },
                 onLongPress: () {

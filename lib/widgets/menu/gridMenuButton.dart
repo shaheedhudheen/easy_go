@@ -1,3 +1,4 @@
+import 'package:easy_go/screens/maps/mapScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_go/screens/amenities/amenities.dart';
 
@@ -18,8 +19,9 @@ class GridMenuButton extends StatelessWidget {
 
         Navigator.push(
           context,
-          MaterialPageRoute(
-              builder: (context) => Amenities(amenitiesName: buttonName)),
+          MaterialPageRoute(builder: (context) => MapScreen()),
+          // MaterialPageRoute(
+          //     builder: (context) => Amenities(amenitiesName: buttonName)),
         );
         //Navigator.pop(context);
       },

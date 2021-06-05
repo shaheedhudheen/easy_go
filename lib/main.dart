@@ -1,4 +1,5 @@
 import 'package:easy_go/screens/maps/applicationBloc.dart';
+
 import 'package:easy_go/screens/wrapper.dart';
 import 'package:easy_go/services/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
