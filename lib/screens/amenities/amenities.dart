@@ -12,15 +12,15 @@ class Amenities extends StatelessWidget {
   final String amenitiesName;
   final String name;
   final String address;
-  // final int rating;
-  // final int totalRating;
+  final num rating;
+  final num totalRating;
 
   Amenities({
     this.amenitiesName,
     this.name,
     this.address,
-    // this.rating,
-    // this.totalRating
+    this.rating = 0,
+    this.totalRating = 0,
   });
 
   @override
@@ -40,8 +40,8 @@ class Amenities extends StatelessWidget {
             AmenitiesCell(
               address: address,
               name: name,
-              // rating: rating,
-              // totalRating: totalRating,
+              rating: rating,
+              totalRating: totalRating,
             ),
             divider,
             // AmenitiesCell(),

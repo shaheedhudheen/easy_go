@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 class AmenitiesCell extends StatelessWidget {
   final String name;
   final String address;
-  // final int rating;
-  // final int totalRating;
+  final num rating;
+  final num totalRating;
 
   AmenitiesCell({
     this.address,
     this.name,
-    // this.rating,
-    // this.totalRating,
+    this.rating = 0,
+    this.totalRating = 0,
   });
   @override
   Widget build(BuildContext context) {
@@ -44,11 +44,11 @@ class AmenitiesCell extends StatelessWidget {
           Text(
             'Address: ' + address,
           ),
-          // Text('Rating:' +
-          //     rating.toString() +
-          //     '(' +
-          //     totalRating.toString() +
-          //     ')'),
+          Text('Rating:' +
+              rating.toString() +
+              '(' +
+              totalRating.toString() +
+              ')'),
         ],
       ),
     );

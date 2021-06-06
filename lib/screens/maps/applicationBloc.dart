@@ -75,10 +75,10 @@ class ApplicationBloc with ChangeNotifier {
       markers = [];
 
       if (places.length > 0) {
-        // for (int i = 0; i < places.length; i++) {
-        var newMarker = markerService.createMarkerFromPlace(places[0]);
-        markers.add(newMarker);
-        // }
+        for (int i = 0; i < places.length; i++) {
+          var newMarker = markerService.createMarkerFromPlace(places[i]);
+          markers.add(newMarker);
+        }
       }
 
       var locationMarker =

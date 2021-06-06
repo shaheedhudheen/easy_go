@@ -58,8 +58,8 @@ class MarkerService {
             amenitiesName: headingTo,
             address: place.address,
             name: place.name,
-            // rating: place.rating,
-            // totalRating: place.ratingNo,
+            rating: place.rating,
+            totalRating: place.ratingNo,
           ));
         },
       ),
