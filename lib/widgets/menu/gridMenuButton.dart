@@ -1,6 +1,7 @@
 import 'package:easy_go/screens/maps/mapScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_go/screens/amenities/amenities.dart';
+import 'package:easy_go/screens/maps/newMap.dart';
 
 class GridMenuButton extends StatelessWidget {
   final String buttonName;

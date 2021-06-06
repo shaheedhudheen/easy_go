@@ -44,7 +44,7 @@ class PlacesService {
     var jsonResults = json['results'] as List;
     print(jsonResults);
     print('jsonresults');
-    print(jsonResults.map((place) => Place.fromJson(place)).toList());
+
     return jsonResults.map((place) => Place.fromJson(place)).toList();
   }
 }
