@@ -12,7 +12,7 @@ class AmenitiesTitle extends StatelessWidget {
     return Container(
       width: 0.5 * MediaQuery.of(context).size.width,
       height: 0.1 * MediaQuery.of(context).size.height,
-      color: Colors.white,
+      color: Color.fromRGBO(47, 46, 65, 1),
       //padding: EdgeInsets.only(left: 10, top: 10),
       child: Center(
         child: Text(

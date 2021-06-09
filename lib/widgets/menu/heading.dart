@@ -4,7 +4,7 @@ class Heading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 0.5 * MediaQuery.of(context).size.width,
+      width: 0.8 * MediaQuery.of(context).size.width,
       height: 0.1 * MediaQuery.of(context).size.height,
       color: Colors.white,
       //padding: EdgeInsets.only(left: 10, top: 10),
