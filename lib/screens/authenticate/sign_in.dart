@@ -1,15 +1,14 @@
 import 'package:easy_go/services/auth.dart';
 import 'package:flutter/material.dart';
 
-
 class SignIn extends StatefulWidget {
   final Function toggleView;
-  SignIn( {this.toggleView});
+  SignIn({this.toggleView});
   @override
   _SignInState createState() => _SignInState();
 }
 
-class _SignInState extends State<SignIn>{
+class _SignInState extends State<SignIn> {
   //Text field state
   String email = '';
   String password = '';
@@ -45,7 +44,10 @@ class _SignInState extends State<SignIn>{
                   Text(
                     'Sign In',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25, fontFamily: 'Bold', color: Colors.black87),
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: 'Bold',
+                        color: Colors.black87),
                   ),
                   Padding(
                     padding: EdgeInsets.all(20.0),
@@ -53,7 +55,8 @@ class _SignInState extends State<SignIn>{
                       children: <Widget>[
                         TextFormField(
                           keyboardType: TextInputType.emailAddress,
-                          validator: (val) => val.isEmpty ? 'Enter an Email' : null,
+                          validator: (val) =>
+                              val.isEmpty ? 'Enter an Email' : null,
                           decoration: InputDecoration(
                             hintText: 'Email',
                             // enabledBorder: OutlineInputBorder(
@@ -65,17 +68,20 @@ class _SignInState extends State<SignIn>{
                               fontSize: 18,
                             ),
                           ),
-                          style: TextStyle(fontSize: 20, fontFamily: 'semi bold'),
-                          onChanged: (val){
+                          style:
+                              TextStyle(fontSize: 20, fontFamily: 'semi bold'),
+                          onChanged: (val) {
                             setState(() => email = val);
-                            },
+                          },
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         TextFormField(
                           obscureText: true,
-                          validator: (val) => val.length < 8 ? 'Password must be 8 letter or more' : null,
+                          validator: (val) => val.length < 8
+                              ? 'Password must be 8 letter or more'
+                              : null,
                           decoration: InputDecoration(
                             hintText: 'Password',
 
@@ -88,8 +94,11 @@ class _SignInState extends State<SignIn>{
                               fontSize: 18,
                             ),
                           ),
-                          style: TextStyle(fontSize: 20, fontFamily: 'semi bold',),
-                          onChanged: (val){
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'semi bold',
+                          ),
+                          onChanged: (val) {
                             setState(() => password = val);
                           },
                         ),
@@ -102,7 +111,8 @@ class _SignInState extends State<SignIn>{
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       primary: Color.fromRGBO(108, 99, 255, 1),
-                      padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                       shape: new RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(50)),
                     ),
@@ -114,20 +124,26 @@ class _SignInState extends State<SignIn>{
                           color: Colors.white),
                     ),
                     onPressed: () async {
-                      if( formKey.currentState.validate() ){
-                        dynamic result = await userCredential.signInWithEmailAndPassword(email, password);
-                        if(result == null){
-                          setState(() => error = 'Could not Sign In with Those Credential');
+                      if (formKey.currentState.validate()) {
+                        dynamic result = await userCredential
+                            .signInWithEmailAndPassword(email, password);
+                        if (result == null) {
+                          setState(() => error =
+                              'Could not Sign In with Those Credential');
                         }
                       }
                     },
                   ),
-                  SizedBox(height: 12,),
+                  SizedBox(
+                    height: 12,
+                  ),
                   Text(
                     error,
-                    style: TextStyle(color: Colors.red, fontSize: 14.0, fontFamily: 'semi bold'),
+                    style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 14.0,
+                        fontFamily: 'semi bold'),
                   ),
-
                   TextButton(
                     child: Text(
                       "Don't have an account, sign up here",
@@ -136,7 +152,7 @@ class _SignInState extends State<SignIn>{
                           fontFamily: 'semi bold',
                           color: Colors.black87),
                     ),
-                    onPressed: (){
+                    onPressed: () {
                       widget.toggleView();
                     },
                   ),

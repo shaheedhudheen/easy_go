@@ -6,14 +6,13 @@ class Register extends StatefulWidget {
 
   final Function toggleView;
 
-  Register( {this.toggleView});
+  Register({this.toggleView});
 
   @override
   _RegisterState createState() => _RegisterState();
 }
 
 class _RegisterState extends State<Register> {
-
   final AuthService userCredential = AuthService();
   final formKey = GlobalKey<FormState>();
   //Text field state
@@ -34,21 +33,25 @@ class _RegisterState extends State<Register> {
               key: formKey,
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: 70,),
+                  SizedBox(
+                    height: 70,
+                  ),
                   Image(
                     alignment: Alignment.center,
                     height: 100.0,
                     width: 100.0,
                     image: AssetImage('assets/images/logo.png'),
                   ),
-                  SizedBox(height: 40,),
-                  Text('Create a Account',
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Text(
+                    'Create a Account',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 25, fontFamily: 'Bold'),
                   ),
-
                   Padding(
-                    padding:  EdgeInsets.all(20.0),
+                    padding: EdgeInsets.all(20.0),
                     child: Column(
                       children: <Widget>[
                         //full name
@@ -64,14 +67,18 @@ class _RegisterState extends State<Register> {
                               fontSize: 10,
                             ),
                           ),
-                          style: TextStyle(fontSize: 14, fontFamily: 'semi bold'),
-                          validator: (val) => val.isEmpty ? 'Enter full name' : null,
-                          onChanged: (val){
-                            setState(() => fullName = val );
+                          style:
+                              TextStyle(fontSize: 14, fontFamily: 'semi bold'),
+                          validator: (val) =>
+                              val.isEmpty ? 'Enter full name' : null,
+                          onChanged: (val) {
+                            setState(() => fullName = val);
                           },
                         ),
 
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
                         //Email
                         TextFormField(
                           keyboardType: TextInputType.emailAddress,
@@ -85,14 +92,18 @@ class _RegisterState extends State<Register> {
                               fontSize: 10,
                             ),
                           ),
-                          style: TextStyle(fontSize: 14, fontFamily: 'semi bold'),
-                          validator: (val) => val.isEmpty ? 'Enter an Email' : null,
-                          onChanged: (val){
+                          style:
+                              TextStyle(fontSize: 14, fontFamily: 'semi bold'),
+                          validator: (val) =>
+                              val.isEmpty ? 'Enter an Email' : null,
+                          onChanged: (val) {
                             setState(() => email = val);
                           },
                         ),
 
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
 
                         //phone
                         TextFormField(
@@ -107,14 +118,19 @@ class _RegisterState extends State<Register> {
                               fontSize: 10,
                             ),
                           ),
-                          style: TextStyle(fontSize: 14, fontFamily: 'semi bold'),
-                          validator: (val) => val.length < 10 ? 'Enter a valid phone number' : null,
-                          onChanged: (val){
-                            setState(() => phone = val );
+                          style:
+                              TextStyle(fontSize: 14, fontFamily: 'semi bold'),
+                          validator: (val) => val.length < 10
+                              ? 'Enter a valid phone number'
+                              : null,
+                          onChanged: (val) {
+                            setState(() => phone = val);
                           },
                         ),
 
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
 
                         //Password
                         TextFormField(
@@ -129,60 +145,67 @@ class _RegisterState extends State<Register> {
                               fontSize: 10,
                             ),
                           ),
-                          style: TextStyle(fontSize: 14, fontFamily: 'semi bold'),
-                          validator: (val) => val.length < 8 ? 'Password must be 8 letter or more' : null,
-                          onChanged: (val){
+                          style:
+                              TextStyle(fontSize: 14, fontFamily: 'semi bold'),
+                          validator: (val) => val.length < 8
+                              ? 'Password must be 8 letter or more'
+                              : null,
+                          onChanged: (val) {
                             setState(() => password = val);
                           },
                         ),
-                        SizedBox(height: 40,),
+                        SizedBox(
+                          height: 40,
+                        ),
 
                         ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Color.fromRGBO(108, 99, 255, 1),
-                            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-                            shape: new RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(50)),
-                          ),
-                          child: Text(
-                            'Register',
-                            style: TextStyle(
-                                fontFamily: 'Bold',
-                                fontSize: 18,
-                                color: Colors.white),
-                          ),
-                          onPressed: () async {
-                            if( formKey.currentState.validate() ){
-                              dynamic result = await userCredential.registerWithEmailAndPassword(email, password);
-                              if(result == null){
-                                setState(() => error = 'please supply a valid Email');
+                            style: ElevatedButton.styleFrom(
+                              primary: Color.fromRGBO(108, 99, 255, 1),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 50, vertical: 15),
+                              shape: new RoundedRectangleBorder(
+                                  borderRadius: new BorderRadius.circular(50)),
+                            ),
+                            child: Text(
+                              'Register',
+                              style: TextStyle(
+                                  fontFamily: 'Bold',
+                                  fontSize: 18,
+                                  color: Colors.white),
+                            ),
+                            onPressed: () async {
+                              if (formKey.currentState.validate()) {
+                                dynamic result = await userCredential
+                                    .registerWithEmailAndPassword(
+                                        email, password);
+                                if (result == null) {
+                                  setState(() =>
+                                      error = 'please supply a valid Email');
+                                }
                               }
-                            }
-                          }
+                            }),
+                        SizedBox(
+                          height: 12,
                         ),
-                        SizedBox(height: 12,),
                         Text(
                           error,
-                          style: TextStyle(color: Colors.red, fontSize: 14.0, fontFamily: 'Bold'),
+                          style: TextStyle(
+                              color: Colors.red,
+                              fontSize: 14.0,
+                              fontFamily: 'Bold'),
                         ),
                       ],
                     ),
                   ),
-
                   TextButton(
-                      onPressed: (){
+                      onPressed: () {
                         widget.toggleView();
                       },
-
                       child: Text(
                         'Already have an account? Log in',
                         style: TextStyle(
-                            color: Colors.black54,
-                            fontFamily: 'semi bold'
-                        ),
-
+                            color: Colors.black54, fontFamily: 'semi bold'),
                       )),
-
                 ],
               ),
             ),

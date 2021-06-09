@@ -1,3 +1,5 @@
+import 'package:easy_go/screens/authenticate/accountPage.dart';
+import 'package:easy_go/screens/construction.dart';
 import 'package:easy_go/screens/maps/mapScreen.dart';
 import 'package:easy_go/screens/menu/menu.dart';
 import 'package:flutter/material.dart';
@@ -85,8 +87,30 @@ class HomeSearch extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               homeIcon(),
-              searchIcon(),
-              accountIcon(),
+              IconButton(
+                iconSize: 30,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Construction()),
+                  );
+                },
+                icon: Icon(Icons.search),
+                color: Colors.white,
+              ),
+              IconButton(
+                iconSize: 30,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AccountPage()),
+                  );
+                },
+                icon: Icon(
+                  Icons.person,
+                ),
+                color: Colors.white,
+              ),
             ],
           ),
         ],
