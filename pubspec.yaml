@@ -40,6 +40,7 @@ dependencies:
   geolocator: ^7.0.3
   http: ^0.13.3
   google_maps_flutter: ^2.0.6
+  autocomplete_textfield: ^1.7.3
 
 dev_dependencies:
   flutter_test:

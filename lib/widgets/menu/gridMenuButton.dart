@@ -37,8 +37,8 @@ class GridMenuButton extends StatelessWidget {
         children: [
           Align(
             child: Image(
-              width: 90,
-              height: 90,
+              width: 20,
+              height: 20,
               image: AssetImage('assets/images/' + imageName),
             ),
             alignment: Alignment.bottomCenter,

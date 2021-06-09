@@ -1,3 +1,4 @@
+import 'package:easy_go/models/photoRef.dart';
 import 'package:easy_go/models/place.dart';
 import 'package:easy_go/screens/amenities/amenities.dart';
 import 'package:easy_go/screens/maps/popup.dart';
@@ -34,6 +35,9 @@ class MarkerService {
     var markerId = place.name;
     String heading = place.types[0];
     String headingTo;
+    // PhotoRef photoid = place.photo;
+    // print('photo id details');
+    // print(photoid);
     if (heading == 'restaurant') {
       headingTo = 'Hotels';
     } else if (heading == 'tourist_attraction') {
@@ -51,7 +55,7 @@ class MarkerService {
       draggable: false,
       infoWindow: InfoWindow(
         title: place.name,
-        snippet: place.address,
+        // snippet: place.address,
         onTap: () {
           print('tapped marker');
           Get.to(Amenities(
@@ -60,6 +64,7 @@ class MarkerService {
             name: place.name,
             rating: place.rating,
             totalRating: place.ratingNo,
+            // photoid: photoid,
           ));
         },
       ),

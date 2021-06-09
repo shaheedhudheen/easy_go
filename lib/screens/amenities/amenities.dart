@@ -14,19 +14,21 @@ class Amenities extends StatelessWidget {
   final String address;
   final num rating;
   final num totalRating;
+  // final String photoid;
 
   Amenities({
-    this.amenitiesName,
-    this.name,
-    this.address,
+    this.amenitiesName = 'no data',
+    this.name = 'no data',
+    this.address = 'no data',
     this.rating = 0,
     this.totalRating = 0,
+    // this.photoid = 'no data'
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromRGBO(47, 46, 65, 1),
       body: SafeArea(
         child: ListView(
           children: [
@@ -42,25 +44,9 @@ class Amenities extends StatelessWidget {
               name: name,
               rating: rating,
               totalRating: totalRating,
+              // photoid: photoid,
             ),
             divider,
-            // AmenitiesCell(),
-            // divider,
-            // AmenitiesCell(),
-            // divider,
-            // AmenitiesCell(),
-            // divider,
-            // AmenitiesCell(),
-            // divider,
-            // AmenitiesCell(),
-            // divider,
-            // AmenitiesCell(),
-            // divider,
-            // AmenitiesCell(),
-            // divider,
-            // AmenitiesCell(),
-            // divider,
-            // AmenitiesCell(),
             FlatButton(
               onPressed: () {
                 Get.back();

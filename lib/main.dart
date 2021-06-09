@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       child: ChangeNotifierProvider(
         create: (context) => ApplicationBloc(),
         child: GetMaterialApp(
+          debugShowCheckedModeBanner: false,
           home: Wrapper(),
         ),
       ),

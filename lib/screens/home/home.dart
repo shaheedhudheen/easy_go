@@ -19,14 +19,17 @@ class Home extends StatelessWidget {
           children: <Widget>[
             Expanded(
               flex: 1,
-              child: HomeTitle(),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: HomeTitle(),
+              ),
             ),
             Expanded(
               flex: 4,
               child: HomeImage(),
             ),
             Expanded(
-              flex: 6,
+              flex: 3,
               child: HomeSearch(),
             ),
           ],

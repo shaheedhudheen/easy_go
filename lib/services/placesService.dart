@@ -1,3 +1,4 @@
+import 'package:easy_go/models/photoRef.dart';
 import 'package:easy_go/models/place.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
@@ -8,7 +9,7 @@ class PlacesService {
 
   Future<List<PlaceSearch>> getAutocomplete(String search) async {
     var url = Uri.parse(
-        'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$search&types=(cities)&key=$key');
+        'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$search&types=(regions)&key=$key');
 
     var response = await http.get(url);
 
@@ -29,6 +30,13 @@ class PlacesService {
 
     var jsonResult = json['result'] as Map<String, dynamic>;
 
+    // var jsonImageResult = jsonResult['photos'];
+    // print('json Iamge Result is \n\n');
+
+    // print(jsonImageResult);
+
+    // print('\n\n');
+
     return Place.fromJson(jsonResult);
   }
 
@@ -42,8 +50,8 @@ class PlacesService {
     var json = convert.jsonDecode(response.body);
 
     var jsonResults = json['results'] as List;
-    print(jsonResults);
-    print('jsonresults');
+    // print('json result is \n\n');
+    // print(jsonResults.map((place) => Place.fromJson(place)).toList());
 
     return jsonResults.map((place) => Place.fromJson(place)).toList();
   }
