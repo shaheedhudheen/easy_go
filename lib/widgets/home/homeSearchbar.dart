@@ -6,6 +6,7 @@ Widget homeSearchBar({
   return Padding(
     padding: EdgeInsets.only(left: 30, right: 30),
     child: TextField(
+      autofillHints: <String>[AutofillHints.addressCityAndState],
       keyboardType: TextInputType.text,
       onChanged: (String textValue) {
         print('Output: ' + textValue);
@@ -37,7 +38,7 @@ Widget homeSearchBar({
           borderRadius: BorderRadius.circular(30),
         ),
         contentPadding: EdgeInsets.all(20),
-        hintText: 'eg. ' + exampleText,
+        hintText: 'Select Location',
         hintStyle: TextStyle(
           color: Colors.black,
           fontSize: 15,
