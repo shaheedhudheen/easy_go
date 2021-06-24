@@ -1,4 +1,5 @@
 import 'package:easy_go/screens/authenticate/accountPage.dart';
+import 'package:easy_go/screens/chatbot/chatscreen.dart';
 import 'package:easy_go/screens/construction.dart';
 import 'package:easy_go/screens/maps/mapScreen.dart';
 import 'package:easy_go/screens/menu/menu.dart';
@@ -92,7 +93,8 @@ class HomeSearch extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Construction()),
+                    MaterialPageRoute(builder: (context) => MapScreen()),
+                    // MaterialPageRoute(builder: (context) => Construction()),
                   );
                 },
                 icon: Icon(Icons.search),
@@ -108,6 +110,19 @@ class HomeSearch extends StatelessWidget {
                 },
                 icon: Icon(
                   Icons.person,
+                ),
+                color: Colors.white,
+              ),
+              IconButton(
+                iconSize: 30,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ChatScreen()),
+                  );
+                },
+                icon: Icon(
+                  Icons.radio_button_on,
                 ),
                 color: Colors.white,
               ),
