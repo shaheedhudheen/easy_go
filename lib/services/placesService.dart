@@ -5,7 +5,7 @@ import 'dart:convert' as convert;
 import 'package:easy_go/models/placeSearch.dart';
 
 class PlacesService {
-  final key = 'AIzaSyAyF77uJei6MFUW22Mvfw3z_iXCs2QsiLE';
+  final key = 'Your API key';
 
   Future<List<PlaceSearch>> getAutocomplete(String search) async {
     var url = Uri.parse(
