@@ -1,5 +1,7 @@
+import 'package:easy_go/screens/maps/mapScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_go/screens/amenities/amenities.dart';
+import 'package:easy_go/screens/maps/newMap.dart';
 
 class GridMenuButton extends StatelessWidget {
   final String buttonName;
@@ -18,8 +20,9 @@ class GridMenuButton extends StatelessWidget {
 
         Navigator.push(
           context,
-          MaterialPageRoute(
-              builder: (context) => Amenities(amenitiesName: buttonName)),
+          MaterialPageRoute(builder: (context) => MapScreen()),
+          // MaterialPageRoute(
+          //     builder: (context) => Amenities(amenitiesName: buttonName)),
         );
         //Navigator.pop(context);
       },
@@ -34,8 +37,8 @@ class GridMenuButton extends StatelessWidget {
         children: [
           Align(
             child: Image(
-              width: 90,
-              height: 90,
+              width: 20,
+              height: 20,
               image: AssetImage('assets/images/' + imageName),
             ),
             alignment: Alignment.bottomCenter,
@@ -45,7 +48,7 @@ class GridMenuButton extends StatelessWidget {
               buttonName,
               style: TextStyle(
                 fontFamily: 'Bold',
-                fontSize: 25,
+                fontSize: 23,
                 fontWeight: FontWeight.w900,
                 color: Colors.white,
               ),
