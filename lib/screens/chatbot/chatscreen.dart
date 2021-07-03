@@ -29,10 +29,20 @@ class _ChatScreenState extends State<ChatScreen> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+        backgroundColor: Colors.grey[400],
         appBar: AppBar(
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
-          title: Text('CHAT BOT'),
+          backgroundColor: Color.fromRGBO(47, 46, 65, 1),
+          title: Text(
+            'EasyGO BOT',
+            style: TextStyle(
+              color: Colors.white,
+              // fontSize: 40,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Bold',
+            ),
+          ),
         ),
         body: Center(
             // Center is a layout widget. It takes a single child and positions it

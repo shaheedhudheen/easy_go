@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:easy_go/models/place.dart';
+import 'package:easy_go/screens/construction.dart';
 import 'package:easy_go/screens/maps/applicationBloc.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -265,7 +266,7 @@ class MapScreenState extends State<MapScreen> {
                           ),
                           elevation: 10,
                           label: Text(
-                            '  Gas   ',
+                            '    Gas      ',
                             style: TextStyle(
                               color: Color.fromRGBO(47, 46, 65, 1),
                               fontSize: 25,
@@ -282,12 +283,12 @@ class MapScreenState extends State<MapScreen> {
                         FilterChip(
                           avatar: Image(
                             width: 30,
-                            height: 30,
+                            height: 29,
                             image: AssetImage('assets/images/atm.png'),
                           ),
                           elevation: 10,
                           label: Text(
-                            '  ATM   ',
+                            '   ATM    ',
                             style: TextStyle(
                               color: Color.fromRGBO(47, 46, 65, 1),
                               fontSize: 25,
@@ -298,6 +299,34 @@ class MapScreenState extends State<MapScreen> {
                           onSelected: (val) =>
                               applicationBloc.togglePlaceType('atm', val),
                           selected: applicationBloc.placeType == 'atm',
+                          selectedColor: Color.fromRGBO(108, 99, 255, 1.0),
+                          disabledColor: Color.fromRGBO(108, 99, 255, 1.0),
+                        ),
+                        FilterChip(
+                          // avatar: Image(
+                          //   width: 30,
+                          //   height: 29,
+                          //   image: AssetImage('assets/images/atm.png'),
+                          // ),
+                          elevation: 10,
+                          label: Text(
+                            '     More...    ',
+                            style: TextStyle(
+                              color: Color.fromRGBO(47, 46, 65, 1),
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'semi bold',
+                            ),
+                          ),
+
+                          onSelected: (val) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Construction()),
+                            );
+                          },
+                          // selected: applicationBloc.placeType == 'atm',
                           selectedColor: Color.fromRGBO(108, 99, 255, 1.0),
                           disabledColor: Color.fromRGBO(108, 99, 255, 1.0),
                         ),

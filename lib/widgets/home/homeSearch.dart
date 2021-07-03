@@ -105,12 +105,10 @@ class HomeSearch extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => AccountPage()),
+                    MaterialPageRoute(builder: (context) => ChatScreen()),
                   );
                 },
-                icon: Icon(
-                  Icons.person,
-                ),
+                icon: Icon(Icons.mark_chat_unread_outlined),
                 color: Colors.white,
               ),
               IconButton(
@@ -118,11 +116,11 @@ class HomeSearch extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ChatScreen()),
+                    MaterialPageRoute(builder: (context) => AccountPage()),
                   );
                 },
                 icon: Icon(
-                  Icons.radio_button_on,
+                  Icons.person,
                 ),
                 color: Colors.white,
               ),

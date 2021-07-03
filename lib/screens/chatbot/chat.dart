@@ -194,13 +194,19 @@ class _ChatState extends State<Chat> {
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 4.0),
                     child: IconButton(
-                      icon: Icon(Icons.send),
+                      icon: Icon(
+                        Icons.send,
+                        color: Color.fromRGBO(47, 46, 65, 1),
+                      ),
                       onPressed: () => handleSubmitted(_textController.text),
                     ),
                   ),
                   IconButton(
                     iconSize: 30.0,
-                    icon: Icon(_isRecording ? Icons.mic_off : Icons.mic),
+                    icon: Icon(
+                      _isRecording ? Icons.mic_off : Icons.mic,
+                      color: Color.fromRGBO(47, 46, 65, 1),
+                    ),
                     onPressed: _isRecording ? stopStream : handleStream,
                   ),
                 ],
@@ -226,13 +232,19 @@ class ChatMessage extends StatelessWidget {
     return <Widget>[
       new Container(
         margin: const EdgeInsets.only(right: 16.0),
-        child: CircleAvatar(child: new Text('B')),
+        child: CircleAvatar(
+            child: new Text(
+          'B',
+          style: TextStyle(fontFamily: 'Bold', fontWeight: FontWeight.bold),
+        )),
       ),
       new Expanded(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(this.name, style: TextStyle(fontWeight: FontWeight.bold)),
+            Text(this.name,
+                style:
+                    TextStyle(fontFamily: 'Bold', fontWeight: FontWeight.bold)),
             Container(
               margin: const EdgeInsets.only(top: 5.0),
               child: Text(text),
@@ -249,10 +261,19 @@ class ChatMessage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            Text(this.name, style: Theme.of(context).textTheme.subtitle1),
+            Text(
+              this.name,
+              style: TextStyle(fontFamily: 'Bold', fontWeight: FontWeight.bold),
+            ),
             Container(
               margin: const EdgeInsets.only(top: 5.0),
-              child: Text(text),
+              child: Text(
+                text,
+                style: TextStyle(
+                    // color: Colors.red,
+                    // fontFamily: 'semi bold',
+                    ),
+              ),
             ),
           ],
         ),
@@ -260,10 +281,11 @@ class ChatMessage extends StatelessWidget {
       Container(
         margin: const EdgeInsets.only(left: 16.0),
         child: CircleAvatar(
+            backgroundColor: Color.fromRGBO(47, 46, 65, 1),
             child: Text(
-          this.name[0],
-          style: TextStyle(fontWeight: FontWeight.bold),
-        )),
+              this.name[0],
+              style: TextStyle(fontFamily: 'Bold', fontWeight: FontWeight.bold),
+            )),
       ),
     ];
   }
